@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dealsdeals-deployment
+  namespace: test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dealsdeals
+  template:
+    metadata:
+      labels:
+        app: dealsdeals
+    spec:
+      containers:
+      - name: dealsdeals
+        image: pooyanazad/dealsdeals:latest
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "200m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"

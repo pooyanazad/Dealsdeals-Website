@@ -2,8 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: dealsdeals-deployment
+  namespace: prod
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: dealsdeals
@@ -14,6 +15,13 @@ spec:
     spec:
       containers:
       - name: dealsdeals
-        image: pooyanazad/dealsdeals:v1.01
+        image: pooyanazad/dealsdeals:latest
         ports:
         - containerPort: 5000
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "1Gi"
+            cpu: "1000m"

@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: dealsdeals-service
+  namespace: prod
 spec:
   type: LoadBalancer
   selector:
