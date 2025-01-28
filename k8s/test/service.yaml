@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dealsdeals-service
+  namespace: test
+spec:
+  type: LoadBalancer
+  selector:
+    app: dealsdeals
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 5000
