@@ -29,7 +29,7 @@ The infrastructure is split into two environments:
 
 - AWS CLI configured
 - Terraform >= 1.3.0
-- kubectl (You should have it to connect, run and test infra on your local machine, Its possible to insatll with snap easily)
+- kubectl (Its possible to insatll with snap easily)
 - Docker
   
 ## Define secrets 
@@ -40,7 +40,7 @@ The infrastructure is split into two environments:
 
 ## Initial Setup
 
-1. Create S3 bucket for Terraform state: (You should do it to be safe but upload is denied in gitignore file, if just want to TEST it)
+1. Create S3 bucket for Terraform state: (You should do it to keep your files safe BUT its possible to run without this step)
 ```bash
 aws s3api create-bucket \
     --bucket dealsdeals-terraform-state \
@@ -133,3 +133,5 @@ kubectl get all -n prod
 - Application versions are tracked in VERSION file
 - Each deployment creates both versioned and latest tags
 - Production deployments require explicit approval
+
+# pooyan.azadparvar@gmail.com
