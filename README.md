@@ -1,7 +1,7 @@
 # DealsDeals Infrastructure and Deployment
 
-This project contains infrastructure as code (Terraform) and deployment configurations for the DealsDeals application.
-
+This project contains infrastructure as code (Terraform) and deployment configurations for the DealsDeals application.</br>
+You can read about E-Commerce Flask App on [ShopApp](app/README.md)
 
 ## Infrastructure Overview
 
@@ -31,6 +31,12 @@ The infrastructure is split into two environments:
 - Terraform >= 1.3.0
 - kubectl (You should have it to connect, run and test infra on your local machine, Its possible to insatll with snap easily)
 - Docker
+  
+## Define secrets 
+- DOCKERHUB_USERNAME
+- DOCKERHUB_TOKEN
+- AWS_ACCESS_KEY_ID
+- AWS_SECRET_ACCESS_KEY
 
 ## Initial Setup
 
@@ -93,7 +99,7 @@ kubectl apply -f k8s/prod/service.yaml
 The project uses GitHub Actions for CI/CD. The pipeline:
 1. Runs tests
 2. Builds and tags Docker image
-3. Deploys to test environment
+3. Deploys to test environment (manual approval, just for now)
 4. Requires manual approval for production
 5. Deploys to production
 
